@@ -1,2 +1,3 @@
-# vscode-keyboard-shortcut-ext
-A vscode extension to learn about keyboard shortcuts
+### Keyboard Shortcuts
+
+Slowly learn the default keybindings within vscode
