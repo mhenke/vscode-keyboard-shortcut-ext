@@ -11,14 +11,16 @@ export class KeyboardHelperExtension implements vscode.Disposable {
   private currentIndex = 0;
   private currentShortcut: IShortCut;
   private allShortcuts: IShortCut[] = [];
+
   private _disposable: vscode.Disposable[] = [];
   private statusBarItem: vscode.StatusBarItem;
 
   public constructor(private readonly context: vscode.ExtensionContext) {
     this.allShortcuts = this.getAllShortcuts();
-
     this.currentShortcut = this.getCurrentShortcut();
-    this.statusBarItem = this.createAndShowStatusBarItem(this.currentShortcut);
+    this.statusBarItem = this.createAndShowStatusBarItem();
+
+    this.refreshStatusBar();
 
     const showMoreInformationCommand = vscode.commands.registerCommand(
       "keyboard-shortcuts.showMoreInformation",
@@ -44,23 +46,19 @@ export class KeyboardHelperExtension implements vscode.Disposable {
     }
   }
 
-  private createAndShowStatusBarItem(
-    shortCut: IShortCut
-  ): vscode.StatusBarItem {
+  private createAndShowStatusBarItem(): vscode.StatusBarItem {
     const statusBarItem = vscode.window.createStatusBarItem(
       vscode.StatusBarAlignment.Right,
-      100
+      0
     );
     statusBarItem.command = "keyboard-shortcuts.showMoreInformation";
-    statusBarItem.text = shortCut.keys;
-    statusBarItem.tooltip = shortCut.text;
     statusBarItem.show();
     return statusBarItem;
   }
 
   private refreshStatusBar() {
     this.statusBarItem.text = this.currentShortcut.keys;
-    this.statusBarItem.tooltip = this.currentShortcut.text;
+    this.statusBarItem.tooltip = `Learning: ${this.currentShortcut.text}`;
   }
 
   private getCurrentShortcut(): IShortCut {
