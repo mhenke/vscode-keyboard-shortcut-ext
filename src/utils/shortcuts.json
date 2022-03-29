@@ -1,0 +1,32 @@
+[
+  {
+    "keys": "Ctrl+Shift+P, F1",
+    "text": "Show Command Palette",
+    "category": "General"
+  },
+  {
+    "keys": "Ctrl+P",
+    "text": "Quick Open, Go to File…",
+    "category": "General"
+  },
+  {
+    "keys": "Ctrl+Shift+N",
+    "text": "New window/instance",
+    "category": "General"
+  },
+  {
+    "keys": "Ctrl+Shift+W",
+    "text": "Close window/instance",
+    "category": "General"
+  },
+  {
+    "keys": "Ctrl+",
+    "text": "User Settings",
+    "category": "General"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+S",
+    "text": "Keyboard Shortcuts",
+    "category": "General"
+  }
+]
