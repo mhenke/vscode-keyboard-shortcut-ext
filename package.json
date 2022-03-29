@@ -16,7 +16,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "keyboard-shortcuts.helloWorld",
+        "command": "keyboard-shortcuts.showMoreInformation",
         "title": "Hello World"
       }
     ]
