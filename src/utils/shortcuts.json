@@ -28,5 +28,590 @@
     "keys": "Ctrl+K Ctrl+S",
     "text": "Keyboard Shortcuts",
     "category": "General"
-  }
+  },
+  {
+    "keys": "Ctrl+X",
+    "text": "Cut line (empty selection)",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+C",
+    "text": "Copy line (empty selection)",
+    "category": "Editing"
+  },
+  {
+    "key": "Alt+ ↑ / ↓",
+    "text": "Move line up/down",
+    "category": "Editing"
+  },
+  {
+    "keys": "Shift+Alt + ↓ / ↑",
+    "text": "Copy line up/down",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+Shift+K",
+    "text": "Delete line",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+Enter",
+    "text": "Insert line below",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+Shift+Enter",
+    "text": "Insert line above",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+Shift+\\",
+    "text": "Jump to matching bracket",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+]",
+    "text": "Indent line",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+[",
+    "text": "Outdent line",
+    "category": "Editing"
+  },
+  {
+    "keys": "Home",
+    "text": "Go to beginning of line",
+    "category": "Editing"
+  },
+  {
+    "keys": "End",
+    "text": "Go to end of line",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+Home",
+    "text": "Go to beginning of file",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+End",
+    "text": "Go to end of file",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+↑ / ↓",
+    "text": "Scroll line up/down",
+    "category": "Editing"
+  },
+  {
+    "keys": "Alt+PgUp / PgDn",
+    "text": "Scroll page up/down",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+Shift+[",
+    "text": "Fold (collapse) region",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+Shift+]",
+    "text": "Unfold (uncollapse) region",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+[",
+    "text": "Fold (collapse) all subregions",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+]",
+    "text": "Unfold (uncollapse) all subregions",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+0",
+    "text": "Fold (collapse) all regions",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+J",
+    "text": "Unfold (uncollapse) all regions",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+C",
+    "text": "Add line comment",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+U",
+    "text": "Remove line comment",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+/",
+    "text": "Toggle line comment",
+    "category": "Editing"
+  },
+  {
+    "keys": "Shift+Alt+A",
+    "text": "Toggle block comment",
+    "category": "Editing"
+  },
+  {
+    "keys": "Alt+Z",
+    "text": "Toggle word wrap",
+    "category": "Editing"
+  },
+  {
+    "keys": "Ctrl+T",
+    "text": "Show all Symbols",
+    "category": "Navigation"
+  },
+  {
+    "keys": "Ctrl+G",
+    "text": "Go to Line…",
+    "category": "Navigation"
+  },
+  {
+    "keys": "Ctrl+P",
+    "text": "Go to File…",
+    "category": "Navigation"
+  },
+  {
+    "keys": "Ctrl+Shift+O",
+    "text": "Go to Symbol…",
+    "category": "Navigation"
+  },
+  {
+    "keys": "Ctrl+Shift+M",
+    "text": "Show Problems panel",
+    "category": "Navigation"
+  },
+  {
+    "keys": "F8",
+    "text": "Go to next error or warning",
+    "category": "Navigation"
+  },
+  {
+    "keys": "Shift+F8",
+    "text": "Go to previous error or warning",
+    "category": "Navigation"
+  },
+  {
+    "keys": "Ctrl+Shift+Tab",
+    "text": "Navigate editor group history",
+    "category": "Navigation"
+  },
+  {
+    "keys": "Alt+ ← / →",
+    "text": "Go back / forward",
+    "category": "Navigation"
+  },
+  {
+    "keys": "Ctrl+M",
+    "text": "Toggle Tab moves focus",
+    "category": "Navigation"
+  },
+  {
+    "keys": "Ctrl+F",
+    "text": "Find",
+    "category": "Search"
+  },
+  {
+    "keys": "Ctrl+H",
+    "text": "Replace",
+    "category": "Search"
+  },
+  {
+    "keys": "F3",
+    "text": "Find next",
+    "category": "Search"
+  },
+  {
+    "keys": "Shift+F3",
+    "text": "Find previous",
+    "category": "Search"
+  },
+  {
+    "keys": "Alt+Enter",
+    "text": "Select all occurences of Find match",
+    "category": "Search"
+  },
+  {
+    "keys": "Ctrl+D",
+    "text": "Add selection to next Find match",
+    "category": "Search"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+D",
+    "text": "Move last selection to next Find match",
+    "category": "Search"
+  },
+  {
+    "keys": "Alt+C / R / W",
+    "text": "Toggle case sensitivity / regular expression / whole word",
+    "category": "Search"
+  },
+  {
+    "keys": "Alt+Click",
+    "text": "Insert cursor",
+    "category": "selection"
+  },
+  {
+    "keys": "Ctrl+Alt+ ↑ / ↓",
+    "text": "Insert cursor above / below",
+    "category": "selection"
+  },
+  {
+    "keys": "Shift+Alt+I",
+    "text": "Insert cursor at end of each line selected",
+    "category": "selection"
+  },
+  {
+    "keys": "Ctrl+L",
+    "text": "Select current line",
+    "category": "selection"
+  },
+  {
+    "keys": "Ctrl+Shift+L",
+    "text": "Select all occurrences of current selection",
+    "category": "selection"
+  },
+  {
+    "keys": "Ctrl+F2",
+    "text": "Select all occurrences of current word",
+    "category": "selection"
+  },
+  {
+    "keys": "Shift+Alt+ ← / →",
+    "text": "Expand / shrink selection",
+    "category": "selection"
+  },
+  {
+    "keys": "Shift + Alt + (drag mouse)",
+    "text": "Column (box) selection",
+    "category": "selection"
+  },
+  {
+    "keys": "Ctrl+Shift+Alt+(arrow key)",
+    "text": "Column (box) selection",
+    "category": "selection"
+  },
+  {
+    "keys": "Ctrl+Shift+Alt + PgUp/PgDn",
+    "text": "Toggle column (box) selection page up/down",
+    "category": "selection"
+  },
+  {
+    "keys": "Ctrl+Space, Ctrl+I",
+    "text": "Trigger suggestion",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "Ctrl+Shift+Space",
+    "text": "Trigger parameter hints",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "Shift+Alt+F",
+    "text": "Format document",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+F",
+    "text": "Format selection",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "F12",
+    "text": "Go to Definition",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "Alt+F12",
+    "text": "Peek Definition",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "Ctrl+K F12",
+    "text": "Open Definition to the side",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "Ctrl+.",
+    "text": "Quick Fix",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "Shift+F12",
+    "text": "Show References",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "F2",
+    "text": "Rename Symbol",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+X",
+    "text": "Trim trailing whitespace",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "Ctrl+K M",
+    "text": "Change file language",
+    "category": "Rich languages editing"
+  },
+  {
+    "keys": "Ctrl+F4, Ctrl+W",
+    "text": "Close editor",
+    "category": "Editor management"
+  },
+  {
+    "keys": "Ctrl+K F",
+    "text": "Close folder",
+    "category": "Editor management"
+  },
+  {
+    "keys": "Ctrl+\\",
+    "text": "Split editor",
+    "category": "Editor management"
+  },
+  {
+    "keys": "Ctrl+ 1 / 2 / 3",
+    "text": "Focus into 1st, 2nd or 3rd editor group",
+    "category": "Editor management"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+ ←/→",
+    "text": "Focus into previous/next editor group",
+    "category": "Editor management"
+  },
+  {
+    "keys": "Ctrl+Shift+PgUp / PgDn",
+    "text": "Move editor left/right",
+    "category": "Editor management"
+  },
+  {
+    "keys": "Ctrl+K ← / →",
+    "text": "Move active editor group",
+    "category": "Editor management"
+  },
+  {
+    "keys": "Ctrl+N",
+    "text": "New file",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+O",
+    "text": "Open File...",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+S",
+    "text": "Save",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+Shift+S",
+    "text": "Save As...",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+K S",
+    "text": "Save All",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+F4",
+    "text": "Close",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+W",
+    "text": "Close All",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+Shift+T",
+    "text": "Reopen closed editor",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+K Enter",
+    "text": "Keep preview mode editor open",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+Tab",
+    "text": "Open next",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+Shift+Tab",
+    "text": "Open previous",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+K P",
+    "text": "Copy path of active file",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+K R",
+    "text": "Reveal active file in Explorer",
+    "category": "File management"
+  },
+  {
+    "keys": "Ctrl+K O",
+    "text": "Show active file in new window/instance",
+    "category": "File management"
+  },
+  {
+    "keys": "F11",
+    "text": "Toggle full screen",
+    "category": "Display"
+  },
+  {
+    "keys": "Shift+Alt+0 ",
+    "text": "text",
+    "category": "Display"
+  },
+  {
+    "keys": "Shift+Alt+0",
+    "text": "Toggle editor layout (horizontal/vertical)",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+ = / -",
+    "text": "Zoom in/out",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+B",
+    "text": "Toggle Sidebar visibility",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+Shift+E",
+    "text": "Show Explorer / Toggle focus",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+Shift+F",
+    "text": "Show Search",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+Shift+G",
+    "text": "Show Source Control",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+Shift+D",
+    "text": "Show Debug",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+Shift+X",
+    "text": "Show Extensions",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+Shift+H",
+    "text": "Replace in files",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+Shift+J",
+    "text": "Toggle Search details",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+Shift+U",
+    "text": "Show Output panel",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+Shift+V",
+    "text": "Open Markdown preview",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+K V",
+    "text": "Open Markdown preview to the side",
+    "category": "Display"
+  },
+  {
+    "keys": "Ctrl+K Z",
+    "text": "Zen Mode (Esc Esc to exit)",
+    "category": "Display"
+  },
+  {
+    "keys": "F9",
+    "text": "Toggle breakpoint",
+    "category": "Debug"
+  },
+  {
+    "keys": "F5",
+    "text": "Start/Continue",
+    "category": "Debug"
+  },
+  {
+    "keys": "Shift+F5",
+    "text": "Stop",
+    "category": "Debug"
+  },
+  {
+    "keys": "F11 / Shift+F11",
+    "text": "Step into/out",
+    "category": "Debug"
+  },
+  {
+    "keys": "F10",
+    "text": "Step over",
+    "category": "Debug"
+  },
+  {
+    "keys": "Ctrl+K Ctrl+I",
+    "text": "Show hover",
+    "category": "Debug"
+  },
+  {
+    "keys": "Ctrl+`",
+    "text": "Show integrated terminal",
+    "category": "Terminal"
+  },
+  {
+    "keys": "Ctrl+Shift+`",
+    "text": "Create new terminal",
+    "category": "Terminal"
+  },
+  {
+    "keys": "Ctrl+C",
+    "text": "Copy selection",
+    "category": "Terminal"
+  },
+  {
+    "keys": "Ctrl+V",
+    "text": "Paste into active terminal",
+    "category": "Terminal"
+  },
+  {
+    "keys": "Ctrl+↑ / ↓",
+    "text": "Scroll up/down",
+    "category": "Terminal"
+  },
+  {
+    "keys": "Shift+PgUp / PgDn",
+    "text": "Scroll page up/down",
+    "category": "Terminal"
+  },
+  {
+    "keys": "Ctrl+Home / End",
+    "text": "Scroll to top/bottom",
+    "category": "Terminal"
+  },
 ]
