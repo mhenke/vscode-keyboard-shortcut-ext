@@ -40,7 +40,7 @@
     "category": "Editing"
   },
   {
-    "key": "Alt+ ↑ / ↓",
+    "keys": "Alt+ ↑ / ↓",
     "text": "Move line up/down",
     "category": "Editing"
   },
@@ -613,5 +613,5 @@
     "keys": "Ctrl+Home / End",
     "text": "Scroll to top/bottom",
     "category": "Terminal"
-  },
+  }
 ]

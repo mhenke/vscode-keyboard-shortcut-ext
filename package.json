@@ -1,6 +1,7 @@
 {
   "name": "keyboard-shortcuts",
-  "displayName": "Keyboard ShortCuts",
+  "displayName": "Shortcut Learning",
+  "publisher": "monilpatel",
   "description": "An extension to (slowly) but truly learn about vscode shortcuts",
   "version": "0.0.1",
   "engines": {
@@ -18,6 +19,10 @@
       {
         "command": "keyboard-shortcuts.showMoreInformation",
         "title": "Hello World"
+      },
+      {
+        "command": "keyboard-shortcuts.selectShortcut",
+        "title": "Shortcut Learning - Select Shortcut"
       }
     ]
   },

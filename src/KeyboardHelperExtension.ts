@@ -34,25 +34,37 @@ export class KeyboardHelperExtension implements vscode.Disposable {
       () => this.showMoreInformation()
     );
 
+    const selectShortcut = vscode.commands.registerCommand(
+      "keyboard-shortcuts.selectShortcut",
+      () => this.selectShortcut()
+    );
+
     // When the index changes update the displayed shortcut and save to global state
-    this.shortCutIndexEvent.event(() => {
+    this.shortCutIndexEvent.event((index: number) => {
       console.log("saving", this.currentIndex);
-      context.globalState.update(CURRENT_INDEX_KEY, this.currentIndex);
+      this.currentIndex = index;
       this.currentShortcut = this.getCurrentShortcut();
       this.refreshStatusBar();
+      context.globalState.update(CURRENT_INDEX_KEY, this.currentIndex);
     });
 
     this._disposable.push(showMoreInformationCommand);
     this._disposable.push(this.statusBarItem);
     this._disposable.push(this.shortCutIndexEvent);
+    this._disposable.push(selectShortcut);
   }
 
   private async showMoreInformation() {
     const result = await vscode.window.showInformationMessage(
       `[${this.currentShortcut.category}] ${this.currentShortcut.text}`,
+      "Choose Shortcut",
       "Previous",
       "Next"
     );
+
+    if (result === "Choose Shortcut") {
+      this.selectShortcut();
+    }
 
     if (result === "Previous") {
       this.setPreviousShortcut();
@@ -85,23 +97,68 @@ export class KeyboardHelperExtension implements vscode.Disposable {
   }
 
   private setNextShortcut() {
+    let updatedIndex = this.currentIndex;
     if (this.currentIndex + 1 < this.allShortcuts.length) {
-      this.currentIndex++;
+      updatedIndex++;
     } else {
-      this.currentIndex = 0;
+      updatedIndex = 0;
     }
 
-    this.shortCutIndexEvent.fire(this.currentIndex);
+    this.shortCutIndexEvent.fire(updatedIndex);
   }
 
   private setPreviousShortcut() {
+    let updatedIndex = this.currentIndex;
     if (this.currentIndex - 1 >= 0) {
-      this.currentIndex--;
+      updatedIndex--;
     } else {
-      this.currentIndex = this.allShortcuts.length - 1;
+      updatedIndex = this.allShortcuts.length - 1;
     }
 
-    this.shortCutIndexEvent.fire(this.currentIndex);
+    this.shortCutIndexEvent.fire(updatedIndex);
+  }
+
+  private async selectShortcut() {
+    const shortcuts = this.getAllShortcuts();
+    const shortcutKeys = shortcuts.map((shortcut) => shortcut.keys);
+
+    const shortCutCategoryMap: Record<string, IShortCut[]> = {};
+    shortcuts.forEach((shortcut) => {
+      if (!shortCutCategoryMap[shortcut.category]) {
+        shortCutCategoryMap[shortcut.category] = [];
+      }
+      shortCutCategoryMap[shortcut.category].push(shortcut);
+    });
+
+    const quickPickItems: vscode.QuickPickItem[] = [];
+    Object.keys(shortCutCategoryMap).forEach((category) => {
+      const shortcuts = shortCutCategoryMap[category];
+
+      // Push category first
+      quickPickItems.push({
+        label: category,
+        kind: vscode.QuickPickItemKind.Separator,
+      });
+
+      // Then push all shortcuts for that category
+      quickPickItems.push(
+        ...shortcuts.map((entry) => {
+          return {
+            label: entry.keys,
+            description: entry.text,
+            picked: entry.keys === this.currentShortcut.keys,
+          } as vscode.QuickPickItem;
+        })
+      );
+    });
+
+    const selectedShortcut = await vscode.window.showQuickPick(quickPickItems);
+
+    if (selectedShortcut) {
+      const index = shortcutKeys.indexOf(selectedShortcut.label);
+      this.currentIndex = index;
+      this.shortCutIndexEvent.fire(this.currentIndex);
+    }
   }
 
   private getAllShortcuts(): IShortCut[] {
