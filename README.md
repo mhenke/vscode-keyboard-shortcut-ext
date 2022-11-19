@@ -1,3 +1,3 @@
-### Keyboard Shortcuts
+## Keyboard Shortcuts
 
-Slowly learn the default keybindings within vscode
+VS Code has a lot of shortcuts. This extension aims to help you learn more of them one at a time.

@@ -1,6 +1,7 @@
 import * as shortcuts from "./utils/shortcuts.json";
 import * as vscode from "vscode";
 
+const CURRENT_INDEX_KEY = "current_index_key";
 interface IShortCut {
   readonly keys: string;
   readonly text: string;
@@ -8,6 +9,8 @@ interface IShortCut {
 }
 
 export class KeyboardHelperExtension implements vscode.Disposable {
+  private shortCutIndexEvent = new vscode.EventEmitter<number>();
+
   private currentIndex = 0;
   private currentShortcut: IShortCut;
   private allShortcuts: IShortCut[] = [];
@@ -17,8 +20,12 @@ export class KeyboardHelperExtension implements vscode.Disposable {
 
   public constructor(private readonly context: vscode.ExtensionContext) {
     this.allShortcuts = this.getAllShortcuts();
+    this.currentIndex = this.context.globalState.get(CURRENT_INDEX_KEY, 0);
     this.currentShortcut = this.getCurrentShortcut();
     this.statusBarItem = this.createAndShowStatusBarItem();
+
+    console.log("currentIndex", this.currentIndex);
+    console.log("saved", this.context.globalState.get(CURRENT_INDEX_KEY, 0));
 
     this.refreshStatusBar();
 
@@ -26,13 +33,23 @@ export class KeyboardHelperExtension implements vscode.Disposable {
       "keyboard-shortcuts.showMoreInformation",
       () => this.showMoreInformation()
     );
+
+    // When the index changes update the displayed shortcut and save to global state
+    this.shortCutIndexEvent.event(() => {
+      console.log("saving", this.currentIndex);
+      context.globalState.update(CURRENT_INDEX_KEY, this.currentIndex);
+      this.currentShortcut = this.getCurrentShortcut();
+      this.refreshStatusBar();
+    });
+
     this._disposable.push(showMoreInformationCommand);
     this._disposable.push(this.statusBarItem);
+    this._disposable.push(this.shortCutIndexEvent);
   }
 
   private async showMoreInformation() {
     const result = await vscode.window.showInformationMessage(
-      `[${this.currentShortcut.category}]${this.currentShortcut.text}`,
+      `[${this.currentShortcut.category}] ${this.currentShortcut.text}`,
       "Previous",
       "Next"
     );
@@ -58,7 +75,9 @@ export class KeyboardHelperExtension implements vscode.Disposable {
 
   private refreshStatusBar() {
     this.statusBarItem.text = this.currentShortcut.keys;
-    this.statusBarItem.tooltip = `Learning: ${this.currentShortcut.text}`;
+    this.statusBarItem.tooltip = new vscode.MarkdownString(
+      `**${this.currentShortcut.keys}**\n\n${this.currentShortcut.text}`
+    );
   }
 
   private getCurrentShortcut(): IShortCut {
@@ -71,8 +90,8 @@ export class KeyboardHelperExtension implements vscode.Disposable {
     } else {
       this.currentIndex = 0;
     }
-    this.currentShortcut = this.getCurrentShortcut();
-    this.refreshStatusBar();
+
+    this.shortCutIndexEvent.fire(this.currentIndex);
   }
 
   private setPreviousShortcut() {
@@ -81,8 +100,8 @@ export class KeyboardHelperExtension implements vscode.Disposable {
     } else {
       this.currentIndex = this.allShortcuts.length - 1;
     }
-    this.currentShortcut = this.getCurrentShortcut();
-    this.refreshStatusBar();
+
+    this.shortCutIndexEvent.fire(this.currentIndex);
   }
 
   private getAllShortcuts(): IShortCut[] {
