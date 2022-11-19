@@ -56,7 +56,7 @@ export class KeyboardHelperExtension implements vscode.Disposable {
 
   private async showMoreInformation() {
     const result = await vscode.window.showInformationMessage(
-      `[${this.currentShortcut.category}] ${this.currentShortcut.text}`,
+      `${this.currentShortcut.text}`,
       "Choose Shortcut",
       "Previous",
       "Next"
