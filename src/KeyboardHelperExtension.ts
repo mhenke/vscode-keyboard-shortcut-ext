@@ -24,9 +24,6 @@ export class KeyboardHelperExtension implements vscode.Disposable {
     this.currentShortcut = this.getCurrentShortcut();
     this.statusBarItem = this.createAndShowStatusBarItem();
 
-    console.log("currentIndex", this.currentIndex);
-    console.log("saved", this.context.globalState.get(CURRENT_INDEX_KEY, 0));
-
     this.refreshStatusBar();
 
     const showMoreInformationCommand = vscode.commands.registerCommand(
@@ -41,7 +38,6 @@ export class KeyboardHelperExtension implements vscode.Disposable {
 
     // When the index changes update the displayed shortcut and save to global state
     this.shortCutIndexEvent.event((index: number) => {
-      console.log("saving", this.currentIndex);
       this.currentIndex = index;
       this.currentShortcut = this.getCurrentShortcut();
       this.refreshStatusBar();
@@ -56,7 +52,7 @@ export class KeyboardHelperExtension implements vscode.Disposable {
 
   private async showMoreInformation() {
     const result = await vscode.window.showInformationMessage(
-      `${this.currentShortcut.text}`,
+      `${this.currentShortcut.keys}: ${this.currentShortcut.text}`,
       "Choose Shortcut",
       "Previous",
       "Next"
