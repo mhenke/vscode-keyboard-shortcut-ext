@@ -1,10 +1,13 @@
-## Keyboard Shortcuts
+## Learn Keyboard Shortcuts
+
+An extension to (slowly) but truly learn about vscode shortcuts.
 
 VS Code has a lot of shortcuts. This extension aims to help you learn more of them *one at a time*. Often times I discover a new shortcut and forget it a few days later. This extension adds the shortcut to the status bar so that you can glance down and see it. I figure that if I see it every time I open VS Code, I'll remember it.
 
-The shortcuts used in this extension were found from the [VS Code documentation](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf).
+The shortcuts used in this extension were found from the [VS Code documentation](https://code.visualstudio.com/shortcuts/learn-keyboard-shortcuts-windows.pdf).
 
 
+Note - Currently only has shortcuts for Windows
 
 ### Status bar 
 In the bottom corner you will see the current shortcut. Hovering over it will show you the shortcut and the description.

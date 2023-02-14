@@ -27,12 +27,12 @@ export class KeyboardHelperExtension implements vscode.Disposable {
     this.refreshStatusBar();
 
     const showMoreInformationCommand = vscode.commands.registerCommand(
-      "keyboard-shortcuts.showMoreInformation",
+      "learn-keyboard-shortcuts.showMoreInformation",
       () => this.showMoreInformation()
     );
 
     const selectShortcut = vscode.commands.registerCommand(
-      "keyboard-shortcuts.selectShortcut",
+      "learn-keyboard-shortcuts.selectShortcut",
       () => this.selectShortcut()
     );
 
@@ -76,7 +76,7 @@ export class KeyboardHelperExtension implements vscode.Disposable {
       vscode.StatusBarAlignment.Right,
       0
     );
-    statusBarItem.command = "keyboard-shortcuts.showMoreInformation";
+    statusBarItem.command = "learn-keyboard-shortcuts.showMoreInformation";
     statusBarItem.show();
     return statusBarItem;
   }
