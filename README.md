@@ -1,4 +1,4 @@
-## Learn Keyboard Shortcuts
+## Shortcut Learning
 
 An extension to (slowly) but truly learn about vscode shortcuts.
 

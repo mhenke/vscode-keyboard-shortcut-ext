@@ -1,6 +1,6 @@
 {
   "name": "learn-keyboard-shortcuts",
-  "displayName": "Learn Keyboard Shortcuts",
+  "displayName": "Shortcut Learning",
   "publisher": "monilpatel",
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "commands": [
       {
         "command": "learn-keyboard-shortcuts.showMoreInformation",
-        "title": "Hello World"
+        "title": "Shortcut Learning - Show More Information"
       },
       {
         "command": "learn-keyboard-shortcuts.selectShortcut",
